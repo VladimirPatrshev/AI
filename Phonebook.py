@@ -26,8 +26,8 @@ def create_contact():
 
 def add_contact():
     contact = create_contact()
-    with open('phonebook.txt' 'a') as file_a:
-        pass
+    with open('phonebook.txt' 'a', encoding="UTF-8") as file_a:
+        file_a.write(contact)
         
 
 def print_contacts():
@@ -40,7 +40,7 @@ def copy():
     pass
 
 def interface():
-    with open('phonebook.txt', 'a'):
+    with open('phonebook.txt', 'a', encoding="UTF-8"):
             pass
     command =" "
     while command !="5":
