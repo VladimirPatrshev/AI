@@ -1,17 +1,17 @@
 def input_name():
-    return ("Введите имя: \n")
+    return ("Введите имя: \n").title()
 
 def input_surname():
-    return ("ВВедите фамилию: \n")
+    return ("ВВедите фамилию: \n").title()
 
 def input_patronumic():
-    return ("Введите отчество: \n")
+    return ("Введите отчество: \n").title()
 
 def input_phone_number():
-    return("Введите номер: \n")
+    return("Введите номер: \n").title()
 
 def input_address():
-    return ("Введите адресс: \n")
+    return ("Введите адресс: \n").title()
 
 def copy_contact():
     return("Введите номер строки для копирования:\n")
