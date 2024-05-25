@@ -13,9 +13,6 @@ def input_phone_number():
 def input_address():
     return input("Введите адрес: \n").title()
 
-def copy_contact():
-    return input("Введите номер строки для копирования:\n")
-
 def create_contact():
     surname = input_surname()
     name = input_name()
@@ -61,8 +58,34 @@ def search_contact():
             print(contact_str) 
             print("****************")
     
-def copy():
-    pass
+def copy_contact():
+    # открыть оба файла на чтение
+    with open('phonebook.txt', 'r', encoding="UTF-8")    as file_r:
+         lst_contacts=file_r.read().rstrip().split("\n\n")
+    
+    with open('phonebook1.txt', 'r', encoding="UTF-8") as file_r:
+         lst_contacts1=file_r.read().rstrip().split("\n\n")
+    # просмотреть оба файла
+    print("Основной справочник:\n\n")
+    for i, contact in enumerate(lst_contacts,1):
+           print(i,contact)
+    print("*"*50)
+    print()
+    print("Вспомогательный справочник:\n\n")
+    for j, contact1 in enumerate(lst_contacts1,1):
+           print(j,contact1)
+    print("*"*50)
+    print()
+    index_str = int( input("Введите строку для копирования: "))
+    # скоприровать строку в переменную str
+    for index_str, contact1 in enumerate(lst_contacts1):
+        copy_str = contact1
+    # открываем фаел на дозапись
+    with open('phonebook.txt', 'a+', encoding="UTF-8")    as file_a:
+         lst_contacts=file_a.write(copy_str)    
+    
+    # записываем данные в конец файла
+    
 
 def interface():
     with open('phonebook.txt', 'a', encoding="UTF-8"):
